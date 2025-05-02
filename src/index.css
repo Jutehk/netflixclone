@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#141414] text-white font-sans;
+  }
+}
+
+@layer components {
+  .netflix-button {
+    @apply bg-[#E50914] hover:bg-[#f6121d] text-white font-bold py-2 px-4 rounded transition-colors duration-300;
+  }
+  
+  .content-card {
+    @apply relative overflow-hidden rounded-md transition-transform duration-300 cursor-pointer;
+  }
+  
+  .content-card:hover {
+    @apply transform scale-105 z-10;
+  }
+  
+  .card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300;
+  }
+  
+  .content-card:hover .card-overlay {
+    @apply opacity-100;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#141414];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
